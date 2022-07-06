@@ -1,0 +1,23 @@
+replicaCount: 1
+image:
+  repository: kodekloud/examplevotingapp_vote:v1
+  pullPolicy: IfNotPresent
+service:
+  name: voting
+  type: NodePort
+  port: 80
+  nodePort: 30004
+  containerPort: 80
+imagePullSecrets: []
+
+deployment:
+  name: voting
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+container:
+  name: voting
