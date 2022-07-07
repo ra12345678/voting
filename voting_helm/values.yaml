@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: kodekloud/examplevotingapp_vote:latest
+  repository: kodekloud/examplevotingapp_vote:v1
   pullPolicy: IfNotPresent
 service:
   name: voting
